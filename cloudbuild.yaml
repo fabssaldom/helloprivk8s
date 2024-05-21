@@ -17,8 +17,8 @@ steps:
 - name: 'gcr.io/cloud-builders/curl'
   id: Connect
   args:
-  - '-v'
-  - '192.168.0.4:22'
+  - '-kv'
+  - 'https://192.168.8.2'
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
