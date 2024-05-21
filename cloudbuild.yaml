@@ -22,23 +22,22 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
+  - 'CLOUDSDK_CORE_PROJECT=us-west2-gke-dev'
   - 'PROJECT_ID=us-west2-gke-dev'
   - 'PROJECT_NAME=us-west2-gke-dev'
 
-#- name: 'gcr.io/cloud-builders/kubectl'
-#  id: Deploy
-#  args:
-#  - 'apply'
-#  - '-f'
-#  - 'kubernetes.yaml'
-#  env:
-#  - 'CLOUDSDK_COMPUTE_REGION=us-west2'
-#  - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
-#  - 'PROJECT_ID=us-west2-gke-dev'
-#  - 'PROJECT_NAME=us-west2-gke-dev'
-#  - 'CLOUD_SDK_PROJECT_NAME=us-west2-gke-dev'
-#  - 'CLOUD_SDK_PROJECT_ID=us-west2-gke-dev'
-#  - 'CLOUD_SDK_PROJECT=us-west2-gke-dev'
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Deploy
+  args:
+  - 'apply'
+  - '-f'
+  - 'kubernetes.yaml'
+  env:
+  - 'CLOUDSDK_COMPUTE_REGION=us-west2'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
+  - 'CLOUDSDK_CORE_PROJECT=us-west2-gke-dev'
+  - 'PROJECT_ID=us-west2-gke-dev'
+  - 'PROJECT_NAME=us-west2-gke-dev'
 options:
   pool:
     name: 'projects/foxdppoc-shared-svcs-sandbox/locations/us-west2/workerPools/foxdp-privpool'
