@@ -32,4 +32,4 @@ steps:
   - 'CLOUDSDK_CORE_PROJECT=foxdp-shared-gke-sandbox'
 options:
   pool:
-    name: 'projects/foxdppoc-shared-svcs-sandbox/locations/us-west2/workerPools/foxdp-privpool'
+    name: 'projects/foxdp-shared-svcs-sandbox/locations/us-west2/workerPools/foxdp-sandbox-cb-workers'
