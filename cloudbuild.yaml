@@ -19,12 +19,6 @@ steps:
   args:
   - '-kv'
   - 'https://192.168.8.2'
-  env:
-  - 'CLOUDSDK_COMPUTE_REGION=us-west2'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
-  - 'CLOUDSDK_CORE_PROJECT=us-west2-gke-dev'
-  - 'PROJECT_ID=us-west2-gke-dev'
-  - 'PROJECT_NAME=us-west2-gke-dev'
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
@@ -34,10 +28,8 @@ steps:
   - 'kubernetes.yaml'
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-west2'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=us-west2-cluster-sandbox'
-  - 'CLOUDSDK_CORE_PROJECT=us-west2-gke-dev'
-  - 'PROJECT_ID=us-west2-gke-dev'
-  - 'PROJECT_NAME=us-west2-gke-dev'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=foxdp-shared-gke-cluster'
+  - 'CLOUDSDK_CORE_PROJECT=foxdp-shared-gke-sandbox'
 options:
   pool:
     name: 'projects/foxdppoc-shared-svcs-sandbox/locations/us-west2/workerPools/foxdp-privpool'
