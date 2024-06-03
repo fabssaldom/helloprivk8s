@@ -18,7 +18,7 @@ steps:
   id: Connect
   args:
   - '-kv'
-  - 'https://192.168.72.2'
+  - 'https://192.168.136.2'
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Deploy
@@ -29,7 +29,7 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-west1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=foxdp-shared-gke-cluster'
-  - 'CLOUDSDK_CORE_PROJECT=foxdp-shared-gke-nonprod'
+  - 'CLOUDSDK_CORE_PROJECT=foxdp-shared-gke-prod'
 options:
   pool:
-    name: 'projects/foxdp-shared-svcs-nonprod/locations/us-west1/workerPools/foxdp-nonprod-cb-workers'
+    name: 'projects/foxdp-shared-svcs-prod/locations/us-west1/workerPools/foxdp-prod-cb-workers'
